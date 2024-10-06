@@ -7,10 +7,13 @@ const port = 3000;
 app.use(cors());
 app.use(express.json({ limit: "25mb" }));
 app.use(express.urlencoded({ limit: "25mb" }));
+
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Origin', '*'); // Replace with your Vercel domain
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
 });
+
 
 //Nodemailer
 const sendEmail = ({ message }) => {
