@@ -10,6 +10,7 @@ app.use(express.urlencoded({ limit: "25mb" }));
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*'); // Replace with your Vercel domain
+    res.send(`Server is running on port: ${port}`)
     //res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
 });
