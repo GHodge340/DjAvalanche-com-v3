@@ -1,6 +1,5 @@
 
 import { useState } from "react";
-import emailjs from "emailjs-com";
 import Button from 'react-bootstrap/Button';
 import React from "react";
 import axios from "axios";
@@ -52,7 +51,7 @@ export const Contact = (props) => {
     console.log(`name: ${name}\nemail: ${email}\nigname: ${igname}`);
     const pass_message = `Name: ${name}\nEmail: ${email}\nIgName: ${igname}`;
     
-    axios.get("https://djavalanche-comv3server.vercel.app", {
+    axios.get("https://djavalanche-comv3server.vercel.app/", {
       params: {
         message: pass_message
       }
@@ -67,42 +66,6 @@ export const Contact = (props) => {
       console.log("failure");
       console.log(e);
     });
-    
-    /**
-     * emailjs
-      .sendForm(serviceID, templateID, e.target, public_key)
-      .then(
-        (result) => {
-          console.log(`Email JS Response`)
-          console.log(result.text);
-          setShow(true);
-          clearState();
-
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-      ///////////////////////////////////
-      axios.get("http://localhost:3000", {
-      params: {
-        message: pass_message
-      }
-    }).then(()=>{
-      console.log("success");
-      setShow(true);
-      Showmessage();
-      clearState();
-    }).catch((e)=>{
-      console.log("error");
-      console.log(e);
-      setShow(true);
-      Showmessage();
-      clearState();
-      
-    })
-
-     */
   };
 
   return (
