@@ -9,7 +9,7 @@ app.use(express.json({ limit: "25mb" }));
 app.use(express.urlencoded({ limit: "25mb" }));
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*'); // Replace with your Vercel domain
+    res.setHeader('Access-Control-Allow-Origin', 'https://dj-avalanche-com-z5e5.vercel.app/'); // Replace with your Vercel domain
     res.send(`Server is running...`)
     //res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
