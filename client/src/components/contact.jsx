@@ -52,7 +52,7 @@ export const Contact = (props) => {
     console.log(`name: ${name}\nemail: ${email}\nigname: ${igname}`);
     const pass_message = `Name: ${name}\nEmail: ${email}\nIgName: ${igname}`;
     
-    axios.get("http://localhost:3000", {
+    axios.get("https://djavalanche-comv3server.vercel.app", {
       params: {
         message: pass_message
       }
