@@ -15,15 +15,18 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get ('/', (req, res) =>{
+    const message = req.query.message; 
+})
 
 //Nodemailer
-const sendEmail = ({ message }) => {
+//const sendEmail = ({ message }) => {
     console.log(`Initiating Nodemailer..`)
     let date = new Date();
     let time = date.toLocaleTimeString();
     let day = date.toLocaleDateString();
     const greeting = "Hello Avalanche Team!\n\nYou got a new message from djavalanche.com:\n"
-    return new Promise((resolve, reject) => {
+    //return new Promise((resolve, reject) => {
         var transporter = nodemailer.createTransport({
             host: 'smtp.zoho.com',
             port: 465,
@@ -48,23 +51,23 @@ const sendEmail = ({ message }) => {
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
                 console.log(error);
-                return reject ({message: `An error occured`})
+               // return reject ({message: `An error occured`})
             } else {
                 console.log(`\nEmail Report`);
                 console.log(`==================================`)
                 console.log('Successful Email sent: \n');
                 console.log(`==================================`)
-                return resolve({ message: "Email sent successfully" });
+               // return resolve({ message: "Email sent successfully" });
             }
         })
-    })
+    //})
 
-}
+//})
 
 app.get("/", (req, res) => {
-    sendEmail(req.query)
-        .then((response) => res.send(response.message))
-        .catch((error) => res.status(500).send(error.message));
+    //sendEmail(req.query)
+     //   .then((response) => res.send(response.message))
+       // .catch((error) => res.status(500).send(error.message));
 });
 
 app.listen(() => {
