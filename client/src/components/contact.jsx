@@ -53,7 +53,7 @@ export const Contact = (props) => {
     const pass_message = `Name: ${name}\nEmail: ${email}\nIgName: ${igname}`;
 
       //Email JS
-      emailjs.sendForm(serviceID, templateID, e.target, userID)
+      emailjs.sendForm(serviceID, templateID, e.target) //, userID
       .then((response) => {
         console.log('Email sent successfully:', response);
         console.log(response.text)
@@ -92,25 +92,24 @@ export const Contact = (props) => {
           <div className="col-md-8">
             <div className="row">
               <div className="section-title">
-                <h2>No Borders Ticket Giveaway</h2>
+                <h2>Bookings & Information</h2>
                 <p>
-                  Please fill out the form below to enter the "No Borders" ticket giveaway contest. To be eligible to win you must be over 18 and follow @thedjavalanche and @radiance.productions on Instagram then complete the form below.  Winners will be announced and contacted on Wednesday October 9th, 2024. 
-                </p>
-                <img
-                  src="../img/NoBorders.jpeg"
-                  width="75%"
-                  top="50"
-                  letf="50"
-                  
-                  alt="No Borders Image"
-                />
-                <p>Listen To: {" "}
-                <a href="https://www.youtube.com/watch?v=nKRwD76iVR8" rel="nofollow">
-                 "No Borders" Soca Mix by Dj Avalanche
-            </a>
-                </p>
+                  For all Booking Inquiries Please fill out the form below. 
+                </p>  
               </div>
               <form name="sentMessage" validate onSubmit={handleSubmit}>
+              <div className="form-group">
+                  <textarea
+                    name="message"
+                    id="message"
+                    className="form-control"
+                    rows="4"
+                    placeholder="Message"
+                    required
+                    onChange={handleChange}
+                  ></textarea>
+                  <p className="help-block text-danger"></p>
+                </div>
                 <div className="row">
                   <div className="col-md-4">
                     <div className="form-group">
@@ -242,4 +241,19 @@ export const Contact = (props) => {
                   ></textarea>
                   <p className="help-block text-danger"></p>
                 </div>
+
+
+                <img
+                  src="../img/NoBorders.jpeg"
+                  width="75%"
+                  top="50"
+                  letf="50"
+                  
+                  alt="No Borders Image"
+                />
+                <p>Listen To: {" "}
+                <a href="https://www.youtube.com/watch?v=nKRwD76iVR8" rel="nofollow">
+                 "No Borders" Soca Mix by Dj Avalanche
+            </a>
+                </p>
  */
