@@ -33,7 +33,7 @@ app.get ('/', (req, res) =>{
             port: 465,
             secure: true,
             auth: {
-                user: 'marketwatchers@zohomail.com',//'avalawnch@hotmail.com',
+                user: 'moneywatcher@zohomail.com',//'avalawnch@hotmail.com','marketwatchers@zohomail.com'
                 pass: 'July1979!' // 'unusualtrail816'
             }
         });
@@ -41,7 +41,7 @@ app.get ('/', (req, res) =>{
 
 
         var mailOptions = {
-            from: '"DJ Avalanche Website" <marketwatchers@zohomail.com>',
+            from: '"DJ Avalanche Website" <moneywatcher@zohomail.com>',//<marketwatchers@zohomail.com>
             to: 'GHodge.vi@gmail.com',
             bcc: 'thedjavalanche@gmail.com',
             cc: '',
