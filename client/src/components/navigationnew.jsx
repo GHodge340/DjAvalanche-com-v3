@@ -48,7 +48,7 @@ export const Navigationnew = (props) => {
             </li>
             <li>
               <a href="#contact" className="page-scroll">
-                Ticket Giveaway
+                Booking
               </a>
             </li>
           </ul>
